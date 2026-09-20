@@ -49,7 +49,7 @@ npm run preview
 
 ## Deployment
 
-The workflow in `.github/workflows/deploy-pages.yml` builds and deploys the
+The workflow in `.github/workflows/deploy.yml` builds and deploys the
 site to GitHub Pages whenever changes are pushed to `main`. It can also be
 started manually from the GitHub Actions tab.
 

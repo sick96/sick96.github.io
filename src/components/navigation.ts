@@ -1,0 +1,4 @@
+import { portfolio } from "../data/portfolio";
+import { icon } from "./icons";
+const navItems = ["About", "Skills", "Projects", "Experience", "Contact"];
+export const navigation = (): string => `<header class="site-header"><a class="brand" href="#top" aria-label="${portfolio.name} home">${portfolio.name}<span>.</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">${icon("menu")}</button><nav id="site-nav" class="site-nav" aria-label="Primary navigation">${navItems.map((item) => `<a href="#${item.toLowerCase()}">${item}</a>`).join("")}<a class="nav-contact" href="#contact">Let’s talk ${icon("arrow")}</a></nav><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><span class="theme-sun">${icon("sun")}</span><span class="theme-moon">${icon("moon")}</span></button></header>`;
