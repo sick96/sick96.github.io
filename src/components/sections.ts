@@ -3,7 +3,30 @@ import { icon } from "./icons";
 const attrs = (url: string): string => url.startsWith("https://") ? ' target="_blank" rel="noreferrer"' : ' aria-disabled="true" tabindex="-1"';
 const tags = (items: string[]): string => items.map((item) => `<li>${item}</li>`).join("");
 const intro = (eyebrow: string, heading: string, copy?: string): string => `<div class="section-intro"><p class="eyebrow">${eyebrow}</p><h2>${heading}</h2>${copy ? `<p>${copy}</p>` : ""}</div>`;
-export const hero = (): string => `<section class="hero section" id="top" aria-labelledby="hero-heading"><div class="hero-copy"><p class="eyebrow">${portfolio.location} · Available for opportunities</p><h1 id="hero-heading">Hi, I’m <span>${portfolio.name}.</span><br>${portfolio.title}.</h1><p class="hero-lede">${portfolio.bio}</p><div class="hero-actions"><a class="button button-primary" href="${portfolio.github}"${attrs(portfolio.github)}>View GitHub ${icon("github")}</a><a class="button button-secondary" href="#contact">Get in touch ${icon("arrow")}</a></div><div class="hero-socials"><a href="${portfolio.github}"${attrs(portfolio.github)} aria-label="GitHub profile">${icon("github")}</a><a href="${portfolio.linkedin}"${attrs(portfolio.linkedin)} aria-label="LinkedIn profile">${icon("linkedin")}</a></div></div><div class="hero-art" aria-hidden="true"><div class="avatar-mark"><span>&lt;/&gt;</span></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="code-card code-card-one">const work =<br><b>"meaningful";</b></span><span class="code-card code-card-two">build();</span></div></section>`;
+export const hero = (): string => 
+    `<section class="hero section" id="top" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+            <p class="eyebrow">${portfolio.location} · Available for opportunities</p>
+            <h1 id="hero-heading">Hi, I’m <span>${portfolio.name}.</span><br>${portfolio.title}.
+            </h1>
+            <p class="hero-lede">${portfolio.bio}</p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="${portfolio.github}"${attrs(portfolio.github)}>View GitHub ${icon("github")}</a>
+                <a class="button button-secondary" href="#contact">Get in touch ${icon("arrow")}</a>
+            </div>
+            <div class="hero-socials">
+                <a href="${portfolio.github}"${attrs(portfolio.github)} aria-label="GitHub profile">${icon("github")}</a>
+                <a href="${portfolio.linkedin}"${attrs(portfolio.linkedin)} aria-label="LinkedIn profile">${icon("linkedin")}</a>
+            </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+            <div class="avatar-mark"><span>&lt;/&gt;</span></div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <span class="code-card code-card-one">string work =<br><b>"meaningful";</b></span>
+            <span class="code-card code-card-two">build();</span>
+        </div>
+    </section>`;
 export const about = (): string => `<section class="section section-surface" id="about" aria-labelledby="about-heading"><div class="about-grid">${intro("01 / About", "A little about me.")}<div class="prose">${portfolio.about.map((p) => `<p>${p}</p>`).join("")}</div></div></section>`;
 const skill = (entry: SkillGroup): string => `<article class="skill-card"><h3>${entry.category}</h3><ul>${tags(entry.skills)}</ul></article>`;
 export const skills = (): string => `<section class="section" id="skills" aria-labelledby="skills-heading">${intro("02 / Expertise", "Tools I use to bring ideas to life.", "A practical, evolving toolkit for shipping thoughtful web products.")}<div class="skills-grid">${portfolio.skills.map(skill).join("")}</div></section>`;
