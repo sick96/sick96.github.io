@@ -145,9 +145,9 @@ export const portfolio: PortfolioData = {
 
     projects: [
         {
-            title: "CTQ Investigation & AI Analysis Platform",
+            title: "Engineering Investigation & AI Analysis Platform",
             description:
-                "A metadata-driven manufacturing investigation platform that helps engineers trace critical-to-quality measurements from finished-good lots across production processes. The platform separates manufacturing knowledge from application logic and supports AI-assisted analysis using engineering knowledge retrieval and structured recommendations.",
+                "A metadata-driven engineering investigation platform for exploring quality-related data and supporting structured, AI-assisted analysis. It keeps domain knowledge separate from application logic to make complex investigations easier to manage.",
             technologies: [
                 "C#",
                 "ASP.NET Core",
@@ -163,9 +163,9 @@ export const portfolio: PortfolioData = {
             featured: true
         },
         {
-            title: "Production Data Processing Platform (DAE)",
+            title: "Manufacturing Data Processing Platform",
             description:
-                "A Python-based manufacturing data platform that parses, validates, transforms, and processes production test data from laboratory and manufacturing systems. The platform supports engineering calculations such as RSS, DCIR, and dQdV, while handling production exceptions, reloads, and data discrepancies.",
+                "A Python-based data platform that validates, transforms, and processes engineering and production data. It supports reliable data pipelines, domain calculations, exception handling, and data-quality workflows.",
             technologies: [
                 "Python",
                 "SQL Server",
@@ -180,7 +180,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Equipment & Test System Integration",
             description:
-                "A collection of production data acquisition and integration services connecting manufacturing and laboratory equipment to centralized engineering systems through RabbitMQ, shared files, SQL Server, and serial communication. Includes equipment monitoring, automated data collection, and production traceability workflows.",
+                "A collection of integration services that connect equipment and test systems with engineering applications. The work includes monitoring, automated data collection, and traceability-oriented workflows.",
             technologies: [
                 "C#",
                 ".NET",
@@ -196,7 +196,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Engineering Portal & Workflow Automation",
             description:
-                "An internal engineering platform that turns manufacturing workflows into web-based applications and services. Modules include yield and utilization analytics, shipment readiness, grading verification, lot processing, engineering investigations, dashboards, monitoring, and workflow automation.",
+                "An engineering platform that turns operational workflows into web-based applications and services, with analytics, dashboards, monitoring, investigations, and workflow automation.",
             technologies: [
                 "Angular",
                 "TypeScript",
@@ -233,7 +233,7 @@ export const portfolio: PortfolioData = {
             description:
                 "Develop production software, manufacturing data platforms, equipment integrations, and engineering applications supporting semiconductor and battery manufacturing operations.",
             highlights: [
-                "Work across Process, Test, Quality, Yield, QT Lab, IT, and manufacturing teams to translate operational problems into software and data solutions.",
+                "Work across engineering, quality, IT, and manufacturing teams to translate operational problems into software and data solutions.",
                 "Maintain and enhance Python-based manufacturing data processing, including production parsing, validation, engineering calculations, exception handling, and traceability.",
                 "Design backend services, REST APIs, equipment integrations, and metadata-driven engineering platforms using C#, .NET, Python, SQL Server, RabbitMQ, and Angular.",
                 "Explore Generative AI, RAG, and MCP to introduce intelligent capabilities into engineering workflows while keeping data access controlled and traceable."
@@ -246,7 +246,7 @@ export const portfolio: PortfolioData = {
             description:
                 "Started at Enovix on the manufacturing and test side before transitioning into the Engineering Software team.",
             highlights: [
-                "Worked in QT Lab test engineering and Zone 4 test engineering, gaining direct experience with battery test systems and production operations.",
+                "Gained direct experience with test systems and production operations before transitioning into software engineering.",
                 "Built strong domain knowledge of manufacturing processes, test data, production issues, and engineering workflows that later became the foundation for software development."
             ]
         },
@@ -257,7 +257,7 @@ export const portfolio: PortfolioData = {
             description:
                 "Supported semiconductor tester commissioning and production readiness during manufacturing plant setup.",
             highlights: [
-                "Owned tester software setup including customized Windows environments, test software installation, domain integration, manufacturing data connectivity, and test software deployment.",
+                "Supported tester software setup, deployment, system integration, and manufacturing readiness during plant setup.",
                 "Performed MSA and tester validation before production handover to Process and Equipment Engineering.",
                 "Troubleshot test software, system integration, and manufacturing connectivity issues."
             ]
@@ -270,7 +270,7 @@ export const portfolio: PortfolioData = {
                 "Supported NPI wafer-level test development, measurement validation, and transition of test solutions into production.",
             highlights: [
                 "Led GR&R, measurement correlation, SPC validation, and production readiness activities for NPI products.",
-                "Performed production-to-laboratory correlation studies using golden/reference units to establish measurement consistency between different test systems.",
+                "Performed correlation studies to establish measurement consistency between different test systems.",
                 "Investigated yield, measurement, and test-system issues during NPI qualification and production handover."
             ]
         }

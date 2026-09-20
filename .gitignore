@@ -4,6 +4,12 @@ node_modules/
 # Vite build output
 dist/
 
+# Locally generated TypeScript output; Vite builds from src/main.ts.
+src/main.js
+src/main.js.map
+src/main.d.ts
+src/main.d.ts.map
+
 # Local environment files
 .env
 .env.*
@@ -14,6 +20,7 @@ dist/
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/mcp.json
+!.vscode/tasks.json
 .idea/
 .DS_Store
 Thumbs.db
