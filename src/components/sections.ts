@@ -48,11 +48,43 @@ const projectMeta = (entry: Project): string => {
     }
     return "";
 };
-const project = (entry: Project): string => `<article class="project-card"><div class="project-top"><span class="project-index">${entry.featured ? "Featured project" : "Selected work"}</span>${projectMeta(entry)}</div><h3>${entry.title}</h3><p>${entry.description}</p><ul class="tag-list">${tags(entry.technologies)}</ul></article>`;
-export const projects = (): string => `<section class="section section-surface" id="projects" aria-labelledby="projects-heading">${intro("03 / Projects", "A few things I’ve built.")}<div class="projects-grid">${portfolio.projects.map(project).join("")}</div></section>`;
-const work = (entry: Experience): string => `<article class="timeline-entry"><div class="timeline-date">${entry.dates}</div><div><p class="entry-kicker">${entry.company}</p><h3>${entry.position}</h3><p>${entry.description}</p><ul class="check-list">${entry.highlights.map((item) => `<li>${item}</li>`).join("")}</ul></div></article>`;
-export const experience = (): string => `<section class="section" id="experience" aria-labelledby="experience-heading"><div class="split-heading">${intro("04 / Experience", "Where I’ve made an impact.")}<p>Engineering software, data platforms, and equipment integration across manufacturing operations.</p></div><div class="timeline">${portfolio.experience.map(work).join("")}</div></section>`;
-const educationItem = (entry: Education): string => `<article class="education-card"><p>${entry.dates}</p><h3>${entry.qualification}</h3><span>${entry.institution}</span></article>`;
+const project = (entry: Project): string => 
+    `<article class="project-card${entry.featured ? " project-card-featured" : ""}">
+        <div class="project-top">
+            <span class="project-index">${entry.featured ? "Featured project" : "Selected work"}</span>
+            ${projectMeta(entry)}
+        </div>
+        <h3>${entry.title}</h3><p>${entry.description}</p>
+        <ul class="tag-list">${tags(entry.technologies)}</ul>
+    </article>`;
+export const projects = (): string => 
+    `<section class="section section-surface" id="projects" aria-labelledby="projects-heading">
+        ${intro("03 / Projects", "A few things I’ve built.")}
+        <div class="projects-grid">${portfolio.projects.map(project).join("")}</div>
+    </section>`;
+const work = (entry: Experience): string => 
+    `<article class="timeline-entry">
+        <div class="timeline-date">${entry.dates}</div>
+        <div>
+            <p class="entry-kicker">${entry.company}</p>
+            <h3>${entry.position}</h3>
+            <p>${entry.description}</p>
+            <ul class="check-list">${entry.highlights.map((item) => `<li>${item}</li>`).join("")}</ul>
+        </div>
+    </article>`;
+export const experience = (): string => 
+    `<section class="section" id="experience" aria-labelledby="experience-heading">
+        <div class="split-heading">
+            ${intro("04 / Experience", "Where I’ve made an impact.")}<p>Engineering software, data platforms, and equipment integration across manufacturing operations.</p>
+        </div>
+        <div class="timeline">${portfolio.experience.map(work).join("")}</div>
+    </section>`;
+const educationItem = (entry: Education): string => 
+    `<article class="education-card">
+        <p>${entry.dates}</p>
+        <h3>${entry.qualification}</h3>
+        <span>${entry.institution}</span>
+    </article>`;
 export const education = (): string => `<section class="section section-surface education-section" id="education" aria-labelledby="education-heading">${intro("05 / Education", "Built on strong foundations.")}<div class="education-grid">${portfolio.education.map(educationItem).join("")}</div></section>`;
 export const contact = (): string => `<section class="section contact-section" id="contact" aria-labelledby="contact-heading"><p class="eyebrow">06 / Contact</p><h2 id="contact-heading">Let’s build something<br><span>useful together.</span></h2><p>I’m always open to discussing new projects, opportunities, and good ideas.</p><a class="email-link" href="mailto:${portfolio.email}">${portfolio.email} ${icon("arrow")}</a><div class="contact-socials"><a href="${portfolio.github}"${attrs(portfolio.github)}>${icon("github")} GitHub</a><a href="${portfolio.linkedin}"${attrs(portfolio.linkedin)}>${icon("linkedin")} LinkedIn</a></div></section>`;
 export const footer = (): string => `<footer class="site-footer"><a class="brand" href="#top">${portfolio.name}<span>.</span></a><p>© ${new Date().getFullYear()} ${portfolio.name}. Built with care.</p><div><a href="${portfolio.github}"${attrs(portfolio.github)} aria-label="GitHub">${icon("github")}</a><a href="${portfolio.linkedin}"${attrs(portfolio.linkedin)} aria-label="LinkedIn">${icon("linkedin")}</a></div></footer>`;

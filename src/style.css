@@ -352,6 +352,9 @@ h1 span,
     background:var(--card);
     transition:transform .25s,box-shadow .25s
 }
+.project-card-featured{
+    border-color:color-mix(in srgb,var(--accent) 35%,var(--line))
+}
 .project-card:hover{
     transform:translateY(-4px);
     box-shadow:0 15px 28px color-mix(in srgb,var(--text) 9%,transparent)
@@ -360,7 +363,8 @@ h1 span,
     display:flex;
     justify-content:space-between;
     align-items:baseline;
-    gap:.5rem
+    gap:.5rem;
+    flex-wrap:wrap
 }
 .project-links{
     display:flex;
@@ -373,7 +377,8 @@ h1 span,
 }
 .project-card h3{
     margin:2.4rem 0 .85rem;
-    font-size:1.65rem
+    font-size:1.65rem;
+    overflow-wrap:break-word
 }
 .project-card>p{
     color:var(--muted);

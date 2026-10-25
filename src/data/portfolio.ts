@@ -192,7 +192,7 @@ export const portfolio: PortfolioData = {
                 "Equipment Integration"
             ],
             github: "",
-            featured: true
+            featured: false
         },
         {
             title: "Engineering Portal & Workflow Automation",
@@ -208,7 +208,7 @@ export const portfolio: PortfolioData = {
                 "RxJS"
             ],
             github: "",
-            featured: true
+            featured: false
         },
         {
             title: "Manufacturing Monitoring & Alerting",
