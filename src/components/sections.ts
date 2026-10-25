@@ -2,13 +2,17 @@ import { portfolio, type Education, type Experience, type Project, type SkillGro
 import { icon } from "./icons";
 const attrs = (url: string): string => url.startsWith("https://") ? ' target="_blank" rel="noreferrer"' : ' aria-disabled="true" tabindex="-1"';
 const tags = (items: string[]): string => items.map((item) => `<li>${item}</li>`).join("");
-const intro = (eyebrow: string, heading: string, copy?: string): string => `<div class="section-intro"><p class="eyebrow">${eyebrow}</p><h2>${heading}</h2>${copy ? `<p>${copy}</p>` : ""}</div>`;
+const intro = (eyebrow: string, heading: string, copy?: string): string => 
+    `<div class="section-intro">
+        <p class="eyebrow">${eyebrow}</p>
+        <h2>${heading}</h2>${copy ? `<p>${copy}</p>` : ""}
+    </div>`;
 export const hero = (): string => 
     `<section class="hero section" id="top" aria-labelledby="hero-heading">
         <div class="hero-copy">
             <p class="eyebrow">${portfolio.location} · Available for opportunities</p>
-            <h1 id="hero-heading">Hi, I’m <span>${portfolio.name}.</span><br>${portfolio.title}.
-            </h1>
+            <h1 id="hero-heading">Hi, I’m <span>${portfolio.name}.</span></h1>
+            <h2 id="hero-heading">${portfolio.title}</h2>
             <p class="hero-lede">${portfolio.bio}</p>
             <div class="hero-actions">
                 <a class="button button-primary" href="${portfolio.linkedin}"${attrs(portfolio.linkedin)}>LinkedIn Profile ${icon("linkedin")}</a>
@@ -28,7 +32,12 @@ export const hero = (): string =>
             <span class="code-card code-card-two">build();</span>
         </div>
     </section>`;
-export const about = (): string => `<section class="section section-surface" id="about" aria-labelledby="about-heading"><div class="about-grid">${intro("01 / About", "A little about me.")}<div class="prose">${portfolio.about.map((p) => `<p>${p}</p>`).join("")}</div></div></section>`;
+export const about = (): string => 
+    `<section class="section section-surface" id="about" aria-labelledby="about-heading">
+        <div class="about-grid">${intro("01 / About", "A little about me.")}
+            <div class="prose">${portfolio.about.map((p) => `<p>${p}</p>`).join("")}</div>
+        </div>
+    </section>`;
 const skill = (entry: SkillGroup): string => `<article class="skill-card"><h3>${entry.category}</h3><ul>${tags(entry.skills)}</ul></article>`;
 export const skills = (): string => `<section class="section" id="skills" aria-labelledby="skills-heading">${intro("02 / Expertise", "Tools I use to bring ideas to life.", "Core languages, backend frameworks, data systems, and integration tools for building reliable software.")}<div class="skills-grid">${portfolio.skills.map(skill).join("")}</div></section>`;
 const projectMeta = (entry: Project): string => {
