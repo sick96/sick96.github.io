@@ -11,7 +11,8 @@ export const hero = (): string =>
             </h1>
             <p class="hero-lede">${portfolio.bio}</p>
             <div class="hero-actions">
-                <a class="button button-primary" href="${portfolio.github}"${attrs(portfolio.github)}>View GitHub ${icon("github")}</a>
+                <a class="button button-primary" href="${portfolio.linkedin}"${attrs(portfolio.linkedin)}>LinkedIn Profile ${icon("linkedin")}</a>
+                <a class="button button-secondary" href="${portfolio.github}"${attrs(portfolio.github)}>View GitHub ${icon("github")}</a>
                 <a class="button button-secondary" href="#contact">Get in touch ${icon("arrow")}</a>
             </div>
             <div class="hero-socials">

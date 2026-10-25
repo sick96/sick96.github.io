@@ -52,14 +52,14 @@ export const portfolio: PortfolioData = {
     linkedin: "https://www.linkedin.com/in/shawnchuan96/",
     website: "https://sick96.github.io/",
 
-    bio: "I build software for real manufacturing problems — connecting equipment, data, engineering workflows, and people.",
+    bio: "I build backend services, data systems, and automation software for real-world engineering and manufacturing challenges.",
 
     about: [
         "I'm a Principal Software Engineer with a background in semiconductor test engineering and manufacturing systems. My career has taken me from NPI and production test, through tester and equipment integration, into software engineering, manufacturing data platforms, and engineering analytics.",
 
-        "I enjoy working on problems where software meets the real world: processing production data, integrating equipment, automating engineering workflows, investigating manufacturing issues, and building tools that engineers can actually use on the shop floor.",
+        "I focus on backend service development, data processing pipelines, and system integration. I enjoy problems where software meets the physical world: processing production telemetry, automating operational workflows, investigating system anomalies, and building robust tools for engineering teams.",
 
-        "I'm strongest in backend development, SQL, Python, system integration, and manufacturing software. I also enjoy exploring newer technologies such as Generative AI, RAG, and Model Context Protocol to make engineering workflows more intelligent and easier to use."
+        "I'm strongest in C#, .NET, Python, SQL Server, and system integration. I also enjoy exploring newer technologies such as Generative AI, RAG, and Model Context Protocol to make engineering systems more intelligent and capable."
     ],
 
     skills: [
@@ -148,7 +148,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Engineering Investigation & AI Analysis Platform",
             description:
-                "A metadata-driven engineering investigation platform for exploring quality-related data and supporting structured, AI-assisted analysis. It keeps domain knowledge separate from application logic to make complex investigations easier to manage.",
+                "An engineering investigation platform combining metadata-driven backend architecture with retrieval-augmented generation (RAG). Separates evolving domain rules from application logic to support structured analysis of complex quality data.",
             technologies: [
                 "C#",
                 "ASP.NET Core",
@@ -166,7 +166,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Manufacturing Data Processing Platform",
             description:
-                "A Python-based data platform that validates, transforms, and processes engineering and production data. It supports reliable data pipelines, domain calculations, exception handling, and data-quality workflows.",
+                "An asynchronous Python data processing platform using RabbitMQ and SQL Server. Implements automated validation pipelines, engineering domain calculations, and structured exception handling to support reliable data quality.",
             technologies: [
                 "Python",
                 "SQL Server",
@@ -181,7 +181,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Equipment & Test System Integration",
             description:
-                "A collection of integration services that connect equipment and test systems with engineering applications. The work includes monitoring, automated data collection, and traceability-oriented workflows.",
+                "Integration services connecting physical test systems and serial equipment with engineering applications. Combines hardware communication, messaging, and database integration to automate data collection and support equipment-to-software traceability.",
             technologies: [
                 "C#",
                 ".NET",
@@ -197,7 +197,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Engineering Portal & Workflow Automation",
             description:
-                "An engineering platform that turns operational workflows into web-based applications and services, with analytics, dashboards, monitoring, investigations, and workflow automation.",
+                "A full-stack web portal consolidating operational workflows, dashboards, and engineering investigations. Uses an Angular and RxJS frontend with ASP.NET Core REST APIs to bring engineering tools and processes into a unified interface.",
             technologies: [
                 "Angular",
                 "TypeScript",
@@ -213,7 +213,7 @@ export const portfolio: PortfolioData = {
         {
             title: "Manufacturing Monitoring & Alerting",
             description:
-                "Production monitoring services that detect abnormal manufacturing conditions and automatically notify engineers with the relevant investigation data. Designed to reduce manual monitoring and shorten the time between abnormal behavior and engineering response.",
+                "Background monitoring services that detect abnormal manufacturing conditions and send contextual email notifications. Includes relevant investigation data in alerts to help engineers assess issues and respond more efficiently.",
             technologies: [
                 "C#",
                 ".NET",
