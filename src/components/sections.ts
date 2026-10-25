@@ -57,15 +57,21 @@ const projectMeta = (entry: Project): string => {
     }
     return "";
 };
-const project = (entry: Project): string => 
-    `<article class="project-card${entry.featured ? " project-card-featured" : ""}">
+const CTQ_DEMO_TITLE = "Engineering Investigation & AI Analysis Platform";
+const project = (entry: Project): string => {
+    const isCtqDemo = entry.title === CTQ_DEMO_TITLE;
+    const demoAttr = isCtqDemo ? " data-project-demo=\"ctq\" role=\"button\" tabindex=\"0\" aria-label=\"Open interactive demo for Engineering Investigation & AI Analysis Platform\"" : "";
+    const demoHint = isCtqDemo ? `<span class="project-demo-hint">View interactive demo →</span>` : "";
+    return `<article class="project-card${entry.featured ? " project-card-featured" : ""}${isCtqDemo ? " project-card-interactive" : ""}"${demoAttr}>
         <div class="project-top">
             <span class="project-index">${entry.featured ? "Featured project" : "Selected work"}</span>
             ${projectMeta(entry)}
         </div>
         <h3>${entry.title}</h3><p>${entry.description}</p>
         <ul class="tag-list">${tags(entry.technologies)}</ul>
+        ${demoHint}
     </article>`;
+};
 export const projects = (): string => 
     `<section class="section section-surface" id="projects" aria-labelledby="projects-heading">
         ${intro("03 / Projects", "A few things I’ve built.")}
