@@ -30,7 +30,7 @@ export const hero = (): string =>
     </section>`;
 export const about = (): string => `<section class="section section-surface" id="about" aria-labelledby="about-heading"><div class="about-grid">${intro("01 / About", "A little about me.")}<div class="prose">${portfolio.about.map((p) => `<p>${p}</p>`).join("")}</div></div></section>`;
 const skill = (entry: SkillGroup): string => `<article class="skill-card"><h3>${entry.category}</h3><ul>${tags(entry.skills)}</ul></article>`;
-export const skills = (): string => `<section class="section" id="skills" aria-labelledby="skills-heading">${intro("02 / Expertise", "Tools I use to bring ideas to life.", "A practical, evolving toolkit for shipping thoughtful web products.")}<div class="skills-grid">${portfolio.skills.map(skill).join("")}</div></section>`;
+export const skills = (): string => `<section class="section" id="skills" aria-labelledby="skills-heading">${intro("02 / Expertise", "Tools I use to bring ideas to life.", "Core languages, backend frameworks, data systems, and integration tools for building reliable software.")}<div class="skills-grid">${portfolio.skills.map(skill).join("")}</div></section>`;
 const projectMeta = (entry: Project): string => {
     const links: string[] = [];
     if (entry.github.startsWith("https://")) {
