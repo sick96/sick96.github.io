@@ -30,10 +30,27 @@ export const hero = (): string =>
 export const about = (): string => `<section class="section section-surface" id="about" aria-labelledby="about-heading"><div class="about-grid">${intro("01 / About", "A little about me.")}<div class="prose">${portfolio.about.map((p) => `<p>${p}</p>`).join("")}</div></div></section>`;
 const skill = (entry: SkillGroup): string => `<article class="skill-card"><h3>${entry.category}</h3><ul>${tags(entry.skills)}</ul></article>`;
 export const skills = (): string => `<section class="section" id="skills" aria-labelledby="skills-heading">${intro("02 / Expertise", "Tools I use to bring ideas to life.", "A practical, evolving toolkit for shipping thoughtful web products.")}<div class="skills-grid">${portfolio.skills.map(skill).join("")}</div></section>`;
-const project = (entry: Project): string => `<article class="project-card"><div class="project-top"><span class="project-index">${entry.featured ? "Featured project" : "Selected work"}</span><div class="project-links"><a href="${entry.github}"${attrs(entry.github)} aria-label="${entry.title} source on GitHub">${icon("github")}</a>${entry.demo ? `<a href="${entry.demo}"${attrs(entry.demo)} aria-label="${entry.title} live demo">${icon("external")}</a>` : ""}</div></div><h3>${entry.title}</h3><p>${entry.description}</p><ul class="tag-list">${tags(entry.technologies)}</ul></article>`;
-export const projects = (): string => `<section class="section section-surface" id="projects" aria-labelledby="projects-heading">${intro("03 / Projects", "A few things I’ve built.", "Replace these project entries in the portfolio data file with your best work.")}<div class="projects-grid">${portfolio.projects.map(project).join("")}</div></section>`;
+const projectMeta = (entry: Project): string => {
+    const links: string[] = [];
+    if (entry.github.startsWith("https://")) {
+        links.push(`<a href="${entry.github}" target="_blank" rel="noreferrer" aria-label="${entry.title} source on GitHub">${icon("github")}</a>`);
+    }
+    if (entry.demo?.startsWith("https://")) {
+        links.push(`<a href="${entry.demo}" target="_blank" rel="noreferrer" aria-label="${entry.title} live demo">${icon("external")}</a>`);
+    }
+    if (links.length > 0) {
+        return `<div class="project-links">${links.join("")}</div>`;
+    }
+    const classification = entry.classification?.trim();
+    if (classification) {
+        return `<span class="project-meta">${classification}</span>`;
+    }
+    return "";
+};
+const project = (entry: Project): string => `<article class="project-card"><div class="project-top"><span class="project-index">${entry.featured ? "Featured project" : "Selected work"}</span>${projectMeta(entry)}</div><h3>${entry.title}</h3><p>${entry.description}</p><ul class="tag-list">${tags(entry.technologies)}</ul></article>`;
+export const projects = (): string => `<section class="section section-surface" id="projects" aria-labelledby="projects-heading">${intro("03 / Projects", "A few things I’ve built.")}<div class="projects-grid">${portfolio.projects.map(project).join("")}</div></section>`;
 const work = (entry: Experience): string => `<article class="timeline-entry"><div class="timeline-date">${entry.dates}</div><div><p class="entry-kicker">${entry.company}</p><h3>${entry.position}</h3><p>${entry.description}</p><ul class="check-list">${entry.highlights.map((item) => `<li>${item}</li>`).join("")}</ul></div></article>`;
-export const experience = (): string => `<section class="section" id="experience" aria-labelledby="experience-heading"><div class="split-heading">${intro("04 / Experience", "Where I’ve made an impact.")}<p>Use this space to connect your work to outcomes, not just a list of duties.</p></div><div class="timeline">${portfolio.experience.map(work).join("")}</div></section>`;
+export const experience = (): string => `<section class="section" id="experience" aria-labelledby="experience-heading"><div class="split-heading">${intro("04 / Experience", "Where I’ve made an impact.")}<p>Engineering software, data platforms, and equipment integration across manufacturing operations.</p></div><div class="timeline">${portfolio.experience.map(work).join("")}</div></section>`;
 const educationItem = (entry: Education): string => `<article class="education-card"><p>${entry.dates}</p><h3>${entry.qualification}</h3><span>${entry.institution}</span></article>`;
 export const education = (): string => `<section class="section section-surface education-section" id="education" aria-labelledby="education-heading">${intro("05 / Education", "Built on strong foundations.")}<div class="education-grid">${portfolio.education.map(educationItem).join("")}</div></section>`;
 export const contact = (): string => `<section class="section contact-section" id="contact" aria-labelledby="contact-heading"><p class="eyebrow">06 / Contact</p><h2 id="contact-heading">Let’s build something<br><span>useful together.</span></h2><p>I’m always open to discussing new projects, opportunities, and good ideas.</p><a class="email-link" href="mailto:${portfolio.email}">${portfolio.email} ${icon("arrow")}</a><div class="contact-socials"><a href="${portfolio.github}"${attrs(portfolio.github)}>${icon("github")} GitHub</a><a href="${portfolio.linkedin}"${attrs(portfolio.linkedin)}>${icon("linkedin")} LinkedIn</a></div></section>`;

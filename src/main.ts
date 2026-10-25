@@ -6,7 +6,7 @@ import { portfolio } from "./data/portfolio";
 
 const app = document.querySelector<HTMLElement>("#app");
 if (!app) throw new Error("The page is missing its application root.");
-app.innerHTML = `${navigation()}<main>${hero()}${about()}${skills()}${projects()}${experience()}${education()}${contact()}</main>${footer()}`;
+app.innerHTML = `${navigation()}<main id="main">${hero()}${about()}${skills()}${projects()}${experience()}${education()}${contact()}</main>${footer()}`;
 
 const navToggle = document.querySelector<HTMLButtonElement>(".nav-toggle");
 const siteNav = document.querySelector<HTMLElement>(".site-nav");
